@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/my-miui.css" />
+		<link rel="stylesheet" href="css/mui.picker.min.css" />
+
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			
+		</script>
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!--侧滑栏开始-->
+				<aside class="mui-off-canvas-left" id="offCanvasSide">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" id="user-guide">
+										<img src="img/user_guide_logo.png"><span>使用指南</span>
+									</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right">
+										<img src="img/refresh_logo.png"><span>版本更新</span>
+									</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right">
+										<img src="img/support_logo.png"><span>技术支持：圣代网络科技</span>
+									</a>
+								</li>
+							</ul>
+							<div class="icon">
+								<img src="img/logo_league.png" class="icon1">
+							</div>
+							<div class="icon">
+								<img src="img/sliding_menu_text.png" class="icon2">
+							</div>
+
+						</div>
+					</div>
+				</aside>
+				<!--侧滑栏结束-->
+
+				<header class="mui-bar mui-bar-nav title" id="title">
+					<!--标题开始-->
+					<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide"></a>
+					<h1 class="mui-title"><a href="#" id='showUserPicker'>榆林新青年</a></h1>
+					<div id='userResult' class="ui-alert"></div>
+					<a href="#popover" id="openPopover" class="mui-pull-right">分类</a>
+					<div id="popover" class="mui-popover">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a href="#">青春在线</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="#">本期专题</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="#">大美榆林</a>
+							</li>
+						</ul>
+					</div>
+				</header>
+				<!--标题结束-->
+
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容开始封面 -->
+						<div id="cover-page" class="mui-content">
+							<div class="mui-row">
+								<div class="mui-col-xs-5">
+									<img src="img/init_img.jpg">
+								</div>
+								<div class="mui-col-xs-7">
+									<img src="img/logo_text.png">
+									<p>2016-08 总第103期</p>
+									<img src="img/special_topic_bar.png">
+								</div>
+							</div>
+						</div>
+						<!--封面结束-->
+						<div>
+							<!--杂志的模板部分开始-->
+							<h4 class="first-title model-margin">青春在线 QING CHUN ZAI XIAN</h4>
+							<div class="model1">
+
+							</div>
+							<!--<div class="model-margin">
+								<img src="img/little_red_mark.png"><span>职场情报站</span>
+							</div>
+							<div class="">
+								<img src="img/big-pic.png" class="big-pic">
+								<p class="big-title">【应届生入职档案 如何存放】</p>
+								<p class="summary">我是一名应届毕业生，今年6月刚刚参加工作，跟公司商议签署“三方协议”.</p>
+							</div>
+							<div class="">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<img class="mui-media-object mui-pull-right" src="img/ic_launcher.png">
+											<div class="mui-media-body">
+												【幸福】
+												<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+
+										</a>
+									</li>
+								</ul>
+							</div>-->
+						</div>
+						<!--杂志的模板部分结束-->
+
+					</div>
+					<!-- 主界面具体展示内容结束 -->
+				</div>
+
+			</div>
+		</div>
+		<textarea class="model-first" style="display: none;">
+			<div class="model-item">
+	            <div class="model-margin second-model">
+					<img src="img/little_red_mark.png"><span class="model-title">职场情报站</span>
+				</div>
+				<a href="#" class="detail-news" id="detail-news">
+					<div class="third-model">
+						<img src="img/big-pic.png" class="big-pic">
+						<p class="big-title">【应届生入职档案 如何存放】</p>
+						<p class="summary">我是一名应届毕业生，今年6月刚刚参加工作，跟公司商议签署“三方协议”.</p>
+						<p class="news-id" style="display: none;"></p>
+					</div>
+				</a>
+				<div class="forth-model">
+					<ul class="mui-table-view  model2">
+						
+					</ul>
+				</div>
+			</div>
+		</textarea>
+		<textarea class="model-second" style="display: none;">
+			<li class="mui-table-view-cell mui-media">
+			    <a href="#" class="detail-news2" id="detail-news2">
+					<img class="mui-media-object mui-pull-right" src="img/ic_launcher.png">
+					<div class="mui-media-body">
+						<span class="small-title">【幸福】</span>
+						<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+						<p class="news-id2" style="display: none;"></p>
+					</div>
+				</a>
+			</li>
+			
+		</textarea>
+
+		<script type="text/javascript" src="js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="js/my-mui.js"></script>
+		<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="js/constant.js" ></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'ywj',
+						text: '2016年08月总第103期'
+					}, {
+						value: 'aaa',
+						text: '2016年06月总第102期'
+					}, {
+						value: 'ymt',
+						text: '2016年04月总第101期'
+					}, {
+						value: 'shq',
+						text: '2016年02月总第10期'
+					}, {
+						value: 'zhbh',
+						text: '2015年10月总第97期'
+					}, {
+						value: 'zhy',
+						text: '2015年09月总第96期'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText = JSON.stringify(items[0]);
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					//-----------------------------------------
+
+				});
+			})(mui, document);
+		</script>
+		
+		<!--网络请求数据-->
+		<script>
+			$(function() {
+				$.ajax({
+					type: "get",
+					url: "PHP/news-content.php",
+					dataType: "JSON",
+					async: true,
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						//通常情况下textStatus和errorThrown只有其中一个包含信息
+						//调用本次ajax请求时传递的options参数
+						alert(XMLHttpRequest.status + "不成功00");
+					},
+					success: function(data) {
+						var isTrue = data.success;
+						var resultList = new Array();
+						if(isTrue == 'true') {
+							resultList = data.result;
+							//							alert(resultList.length);
+							for(var i = 0; i < resultList.length; i++) {
+								$(".model1").append($(".model-first").text());
+								var _mode_item = $(".model-item").eq(i);
+								var firstModeContent = resultList[i];
+								$(".model-title").eq(i).html(firstModeContent.twoColumn);
+								var secondModeList = new Array();
+								secondModeList = firstModeContent.list;
+								var secondModeContent = secondModeList[0];
+								$(".big-title").eq(i).html("【" + secondModeContent.title + "】");
+								var imgUrl=base_path+secondModeContent.magaImgurl.substring(1,secondModeContent.magaImgurl.length);
+								$(".big-pic").eq(i).attr("src",imgUrl);
+								$(".news-id").eq(i).html(secondModeContent.id);
+								
+//								$("#fup").attr("src",路径)
+								
+								$(".summary").eq(i).html(secondModeContent.summary);
+								if(secondModeList.length >= 2) {
+									for(var j = 1; j < secondModeList.length; j++) {
+										_mode_item.find(".model2").append($(".model-second").text());
+										var thirdModeContent = secondModeList[j];
+//										alert(thirdModeContent.title);
+										_mode_item.find(".model2 .small-title").eq(j - 1).html("【" + thirdModeContent.title + "】");
+										_mode_item.find(".model2 .mui-ellipsis").eq(j - 1).html(thirdModeContent.summary);
+										var small_img_url=base_path+thirdModeContent.magaImgurl.substring(1,thirdModeContent.magaImgurl.length);
+										_mode_item.find(".model2 .mui-media-object").eq(j - 1).attr("src",small_img_url);
+											_mode_item.find(".model2 .news-id2").eq(j - 1).html(thirdModeContent.id);
+									}
+								}
+							}
+						} else {
+							alert("数据获取失败！")
+						}
+					}
+				});
+			})
+		</script>
+		<script>
+//			$(document).on("click",".detail-news",function(){
+//				var newsid=$(this).find(".news-id").html();
+//				window.location.href="detail-news.html?"+newsid;
+//			})
+			$(document).on("click",".detail-news2",function(){
+				var newsid=$(this).find(".news-id2").html();
+				window.location.href="detail-news.html?"+newsid;
+			})
+		</script>
+		<!--打开导航页-->
+		<script>
+			document.getElementById('user-guide').addEventListener('tap', function() {
+				//打开关于页面
+				var newsid=$(this).find(".news-id").html();
+				mui.openWindow({
+					url: 'use-guide.html',
+					id: 'use-guide'
+				});
+			});
+		</script>
+		<script>
+			mui("body").on('tap',"#detail-news", function() {
+				//打开关于页面
+				var newsid=$(this).find(".news-id").html();
+				console.log("newsid");
+				mui.openWindow({
+					url: 'detail-news.html?'+newsid,
+					id: 'detail-news'
+				});
+			});
+		</script>
+		<script>
+			mui("body").on('tap',"#detail-news2", function() {
+				//打开关于页面
+				var newsid2=$(this).find(".news-id2").html();
+				console.log("newsid");
+				mui.openWindow({
+					url: 'detail-news.html?'+newsid2,
+					id: 'detail-news2'
+				});
+			});
+		</script>
+	</body>
+
+</html>

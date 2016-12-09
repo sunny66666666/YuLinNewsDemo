@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/my-miui.css" />
+		<script type="text/javascript" src="js/jquery-2.2.3.min.js" ></script>
+		<script type="text/javascript" src="js/constant.js" ></script>
+		<link rel="stylesheet" href="css/my-miui.css" />
+		
+		
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<header class="mui-bar mui-bar-nav user-guide-title title ">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">使用指南</h1>
+		</header>
+		<div id="content">
+			
+		</div>
+		<!--请求数据-->
+		
+		<script>
+		$(function(){
+			
+			$.ajax({
+				type:"get",
+				url:user_guide,
+				dataType : "JSON",
+				async:true,
+				error : function(XMLHttpRequest, textStatus, errorThrown){
+				          //通常情况下textStatus和errorThrown只有其中一个包含信息
+				           //调用本次ajax请求时传递的options参数
+				          alert(XMLHttpRequest.status+"不成功00");
+				      },
+				      success:function(data){
+				      	var isTrue=data.success;
+				      	var result=data.result;
+				      	
+				      	if(isTrue=='true'){
+				      		var list=new Array();
+				      		list=result.list;
+				      		for(var i=0;i<list.length;i++){
+				      			var listContent=list[i];
+				      		var user_guide=listContent.southContents;
+				      		$("#content").html(user_guide);
+				      		}
+				      		
+				      	}
+				      	
+				      	
+				      	
+				      
+				      }
+			});
+		})
+			
+		</script>
+	</body>
+
+</html>
