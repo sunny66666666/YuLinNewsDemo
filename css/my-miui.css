@@ -186,3 +186,7 @@ body #slider .mui-slider-group .mui-slider-item img {
 .forth-model .mui-table-view .mui-ellipsis {
 	color: #222222;
 }
+#share{
+	margin-top: 5px;
+	right: 10px;
+}
