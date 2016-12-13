@@ -15,9 +15,21 @@
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
-			
-			
 		</script>
+		<!--首页右边按钮的模态框 注意，如果要给这个模态框的元素添加事件，必须要将他放在bodyd的直接子目录下，不然，会被最外层的 浮层覆盖，无法触发事件-->
+		<div id="popover" class="mui-popover" >
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="type1">
+					<a href="javascript:void(0)" >青春在线</a>
+				</li>
+				<li class="mui-table-view-cell" id="type2">
+					<a href="#">本期专题</a>
+				</li>
+				<li class="mui-table-view-cell" id="type3">
+					<a href="#">大美榆林</a>
+				</li>
+			</ul>
+		</div>
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
 		<div class="mui-off-canvas-wrap mui-draggable">
@@ -62,22 +74,8 @@
 					<h1 class="mui-title"><a href="#" id='showUserPicker'>榆林新青年</a></h1>
 					<div id='userResult' class="ui-alert"></div>
 					<a href="#popover" id="openPopover" class="mui-pull-right">分类</a>
-					<div id="popover" class="mui-popover">
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a href="#">青春在线</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a href="#">本期专题</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a href="#">大美榆林</a>
-							</li>
-						</ul>
-					</div>
 				</header>
 				<!--标题结束-->
-
 				<div class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<!-- 主界面具体展示内容开始封面 -->
@@ -162,153 +160,12 @@
 					</div>
 				</a>
 			</li>
-			
 		</textarea>
-
 		<script type="text/javascript" src="js/mui.picker.min.js"></script>
-		<script type="text/javascript" src="js/my-mui.js"></script>
 		<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 		<script type="text/javascript" src="js/constant.js" ></script>
-		<script>
-			(function($, doc) {
-				$.init();
-				$.ready(function() {
-					//普通示例
-					var userPicker = new $.PopPicker();
-					userPicker.setData([{
-						value: 'ywj',
-						text: '2016年08月总第103期'
-					}, {
-						value: 'aaa',
-						text: '2016年06月总第102期'
-					}, {
-						value: 'ymt',
-						text: '2016年04月总第101期'
-					}, {
-						value: 'shq',
-						text: '2016年02月总第10期'
-					}, {
-						value: 'zhbh',
-						text: '2015年10月总第97期'
-					}, {
-						value: 'zhy',
-						text: '2015年09月总第96期'
-					}]);
-					var showUserPickerButton = doc.getElementById('showUserPicker');
-					var userResult = doc.getElementById('userResult');
-					showUserPickerButton.addEventListener('tap', function(event) {
-						userPicker.show(function(items) {
-							userResult.innerText = JSON.stringify(items[0]);
-							//返回 false 可以阻止选择框的关闭
-							//return false;
-						});
-					}, false);
-					//-----------------------------------------
-
-				});
-			})(mui, document);
-		</script>
-		
 		<!--网络请求数据-->
-		<script>
-			$(function() {
-				$.ajax({
-					type: "get",
-					url: "PHP/news-content.php",
-					dataType: "JSON",
-					async: true,
-					error: function(XMLHttpRequest, textStatus, errorThrown) {
-						//通常情况下textStatus和errorThrown只有其中一个包含信息
-						//调用本次ajax请求时传递的options参数
-						alert(XMLHttpRequest.status + "不成功00");
-					},
-					success: function(data) {
-						var isTrue = data.success;
-						var resultList = new Array();
-						if(isTrue == 'true') {
-							resultList = data.result;
-							//							alert(resultList.length);
-							for(var i = 0; i < resultList.length; i++) {
-								$(".model1").append($(".model-first").text());
-								var _mode_item = $(".model-item").eq(i);
-								var firstModeContent = resultList[i];
-								$(".model-title").eq(i).html(firstModeContent.twoColumn);
-								var secondModeList = new Array();
-								secondModeList = firstModeContent.list;
-								var secondModeContent = secondModeList[0];
-								$(".big-title").eq(i).html("【" + secondModeContent.title + "】");
-								var imgUrl=base_path+secondModeContent.magaImgurl.substring(1,secondModeContent.magaImgurl.length);
-								$(".big-pic").eq(i).attr("src",imgUrl);
-								$(".news-id").eq(i).html(secondModeContent.id);
-								
-//								$("#fup").attr("src",路径)
-								
-								$(".summary").eq(i).html(secondModeContent.summary);
-								if(secondModeList.length >= 2) {
-									for(var j = 1; j < secondModeList.length; j++) {
-										_mode_item.find(".model2").append($(".model-second").text());
-										var thirdModeContent = secondModeList[j];
-//										alert(thirdModeContent.title);
-										_mode_item.find(".model2 .small-title").eq(j - 1).html("【" + thirdModeContent.title + "】");
-										_mode_item.find(".model2 .mui-ellipsis").eq(j - 1).html(thirdModeContent.summary);
-										var small_img_url=base_path+thirdModeContent.magaImgurl.substring(1,thirdModeContent.magaImgurl.length);
-										_mode_item.find(".model2 .mui-media-object").eq(j - 1).attr("src",small_img_url);
-											_mode_item.find(".model2 .news-id2").eq(j - 1).html(thirdModeContent.id);
-									}
-								}
-							}
-						} else {
-							alert("数据获取失败！")
-						}
-					}
-				});
-			})
-		</script>
-		<script>
-//			$(document).on("click",".detail-news",function(){
-//				var newsid=$(this).find(".news-id").html();
-//				window.location.href="detail-news.html?"+newsid;
-//			})
-//			$(document).on("click",".detail-news2",function(){
-//				var newsid=$(this).find(".news-id2").html();
-//				window.location.href="detail-news.html?"+newsid;
-//			})
-		</script>
-		<!--打开导航页-->
-		<script>
-			document.getElementById('user-guide').addEventListener('tap', function() {
-				//打开关于页面
-				var newsid=$(this).find(".news-id").html();
-				mui.openWindow({
-					url: 'use-guide.html',
-					id: 'use-guide'
-				});
-			});
-		</script>
-		<script>
-			mui("body").on('tap',"#detail-news", function() {
-				//打开关于页面
-				var newsid=$(this).find(".news-id").html();
-				console.log("newsid");
-				mui.openWindow({
-					url: 'detail-news.html?'+newsid,
-					id: 'detail-news'
-				});
-			});
-		</script>
-		<script>
-			mui("body").on('tap',"#detail-news2", function() {
-				//打开关于页面
-				var newsid2=$(this).find(".news-id2").html();
-				console.log("newsid");
-				mui.openWindow({
-					url: 'detail-news.html?'+newsid2,
-					id: 'detail-news2'
-				});
-			});
-		</script>
-		
-	
+		<script type="text/javascript" src="js/get-service-data.js" ></script>
+		<script type="text/javascript" src="js/my-mui.js"></script>
 	</body>
-
 </html>

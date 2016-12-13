@@ -11,7 +11,6 @@ body #slider .mui-slider-group .mui-slider-item img {
 .title {
 	background: #ea4f45;
 }
-
 #title h1,
 #title a {
 	color: #fff;
@@ -23,8 +22,8 @@ body #slider .mui-slider-group .mui-slider-item img {
 	top: 10px
 }
 
-#title .mui-popover {
-	width: 150px;
+.mui-popover {
+	width: 120px;
 	background: #fff;
 }
 

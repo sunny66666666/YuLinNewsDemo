@@ -46,6 +46,8 @@ mui('.mui-scroll-wrapper').scroll({
 第三方登陆<br>
 分享<br>
 图案锁屏<br>
+5：关于模态框
+模态框尽量放在根节点的子目录下（不要放在嵌套层），防止最外层的遮罩层的级别过高，覆盖模态框，导致点击事件无法触发响应<br>
 扫码下载<br>
 ![ͼʾ 1](https://i.niupic.com/images/2016/12/13/BrQjud.png)<br>
 [APP下载地址](http://fir.im/nbx8)  <br>

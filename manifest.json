@@ -279,7 +279,10 @@
 					"css/mui.min.css",
 					"js/jquery-2.2.3.min.js",
 					"js/constant.js",
-					"PHP/news-content.php"
+					"PHP/news-content.php",
+					"PHP/current-topic.php",
+					"PHP/beautiful-yulin.php",
+					"js/get-service-data.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -297,7 +300,8 @@
 					"img/3.png",
 					"img/1.png",
 					"img/4.jpg",
-					"img/0.png"
+					"img/0.png",
+					"img/download.png"
 				],
 				"refer": [],
 				"priority": 0

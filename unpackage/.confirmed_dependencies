@@ -40,7 +40,10 @@
       "css/mui.min.css",
       "js/jquery-2.2.3.min.js",
       "js/constant.js",
-      "PHP/news-content.php"
+      "PHP/news-content.php",
+      "PHP/current-topic.php",
+      "PHP/beautiful-yulin.php",
+      "js/get-service-data.js"
     ],
     "refer": [
       "index.html"
