@@ -42,13 +42,13 @@ mui('.mui-scroll-wrapper').scroll({
 
 在HBuilder中新创建新webapp项目 勾选 带登陆和设置的模板
 
-里面包含 第三方登陆
-分享
-图案锁屏
-
-[APP下载地址](http://fir.im/nbx8)  
-扫码下载：
-![ͼʾ 1](https://i.niupic.com/images/2016/12/13/BrQjud.png)
+里面包含 
+第三方登陆<br>
+分享<br>
+图案锁屏<br>
+扫码下载<br>
+![ͼʾ 1](https://i.niupic.com/images/2016/12/13/BrQjud.png)<br>
+[APP下载地址](http://fir.im/nbx8)  <br>
 ![ͼʾ 1](https://i.niupic.com/images/2016/12/12/Z4pu9p.jpg)
 ![ͼʾ 2](https://i.niupic.com/images/2016/12/12/Flttxd.jpg)
 ![ͼʾ 3](https://i.niupic.com/images/2016/12/12/L8krcb.jpg)
