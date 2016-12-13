@@ -28,12 +28,12 @@
 				});
 			});
 		</script>
-```javascript
+```
 
 接受页面的处理：
 ```javascript
 var newsid = window.location.href.split('?')[1];
-```javascript
+```
 
 3：页面过长，滑动没有效果
 关键类：mui-scroll-wrapper
@@ -42,7 +42,7 @@ var newsid = window.location.href.split('?')[1];
 mui('.mui-scroll-wrapper').scroll({
 	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 });
-```javascript
+```
 4：第三方  分享实现
 
 在HBuilder中新创建新webapp项目 勾选 带登陆和设置的模板
