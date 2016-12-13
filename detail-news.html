@@ -122,12 +122,12 @@
 					}
 				};
 				msg.href ='http://120.27.107.113:8080/magazine/b/mobMagazine/magDetails?id='+newsid;
-				msg.title = "最接近原生APP体验的高性能前端框架";
+				msg.title = "榆林新青年APP给您分享的最新文章，我们一起来阅读吧！";
 				msg.content = "榆林新青年APP给您分享的最新文章，我们一起来阅读吧！";
 				if (~share.id.indexOf('weibo')) {
 					msg.content += "；体验地址："+'http://120.27.107.113:8080/magazine/b/mobMagazine/magDetails?id='+newsid;
 				}
-				msg.thumbs = ["_www/images/logo.png"];
+				msg.thumbs = ["img/ic_launcher.png"];
 				share.send(msg, function() {
 					console.log("分享到\"" + share.description + "\"成功！ ");
 				}, function(e) {
