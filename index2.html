@@ -11,12 +11,52 @@
 	</head>
 
 	<body>
+		<!--这个符合常规的习惯 但是有个不好的 用户体验，就是 在打开APP后，会先加载完首页，，闪一下，才开始进入引导页的页面展示，用户体验不佳-->
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
-			
+//			 创建子页面，首个选项卡页面显示，其它均隐藏；
+			mui.plusReady(function() {
+				launchScreen();
+			});
 		</script>
-	
+		<script>
+			// 设置启动时的轮播页
+	function launchScreen() {
+		//读取本地存储，检查是否为首次启动
+//		var showGuide = plus.storage.getItem("lauchFlag");
+//		if(showGuide){ 
+//			//有值，说明已经显示过了，无需显示；
+//			//关闭splash页面；
+//			plus.navigator.closeSplashscreen();
+//			plus.navigator.setFullscreen(false);
+//		}else{
+//			//显示启动导航
+//			mui.openWindow({
+//				id:'guide',
+//				url:'guide.html',
+//				show:{
+//					aniShow:'none'
+//				},
+//				waiting:{
+//					autoShow:false
+//				}
+//			});
+//		}
+//测试期间，为了让导航页每次显示，就不做以上判断
+//显示启动导航
+			mui.openWindow({
+				id:'guide',
+				url:'guide.html',
+				show:{
+					aniShow:'none'
+				},
+				waiting:{
+					autoShow:false
+				}
+			});
+	}
+		</script>
 		<!--首页右边按钮的模态框 注意，如果要给这个模态框的元素添加事件，必须要将他放在bodyd的直接子目录下，不然，会被最外层的 浮层覆盖，无法触发事件-->
 		<div id="popover" class="mui-popover" >
 			<ul class="mui-table-view">
@@ -170,7 +210,7 @@
 		<script type="text/javascript" src="js/get-service-data.js" ></script>
 		<script type="text/javascript" src="js/my-mui.js"></script>
 		
-		<!--<script> 
+		<script> 
 		     document.addEventListener("plusready", function() { 
 		         // 注册返回按键事件 
 		         plus.key.addEventListener('backbutton', function() { 
@@ -182,25 +222,6 @@
 		             }, null, ["取消", "确定"]); 
 		         }, false); 
 		     }); 
-		 </script> -->
-		 
-		 <script>
-			var back_first = null;
-			mui.back = function() {
-				if(!back_first) {
-					back_first = new Date().getTime();
-					mui.toast('再按一次退出应用');
-					setTimeout(function() {
-						back_first = null;
-					}, 2000);
-				} else {
-					if(new Date().getTime() - back_first < 2000) {
-						plus.runtime.quit();
-					}
-				}
-				return false;
-			}
-		</script>
-	
+		 </script> 
 	</body>
 </html>

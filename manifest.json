@@ -14,7 +14,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "guide.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -347,9 +347,53 @@
 				"resources": [
 					"img/leader2.jpg",
 					"img/leader3.jpg",
-					"img/leader1.jpg"
+					"img/leader1.jpg",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"index.html",
+					"index1.html",
+					"index2.html"
+				],
+				"priority": 0
+			},
+			"index1.html": {
+				"resources": [
+					"js/my-mui.js",
+					"css/my-miui.css"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"index2.html": {
+				"resources": [
+					"js/my-mui.js",
+					"css/my-miui.css",
+					"img/big-pic.png",
+					"img/refresh_logo.png",
+					"js/mui.picker.min.js",
+					"fonts/mui.ttf",
+					"js/jquery-2.2.3.min.js",
+					"img/user_guide_logo.png",
+					"img/support_logo.png",
+					"img/sliding_menu_text.png",
+					"js/constant.js",
+					"img/ic_launcher.png",
+					"img/logo_text.png",
+					"PHP/news-content.php",
+					"img/logo_league.png",
+					"img/little_red_mark.png",
+					"js/get-service-data.js",
+					"css/mui.picker.min.css",
+					"img/special_topic_bar.png",
+					"img/init_img.jpg",
+					"PHP/beautiful-yulin.php",
+					"PHP/current-topic.php"
+				],
+				"refer": [
+					"guide.html"
+				],
 				"priority": 0
 			}
 		},

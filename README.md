@@ -71,6 +71,25 @@ mui('.mui-scroll-wrapper').scroll({
 		         }, false); 
 		     }); 
 		 </script> 
+		 
+		 //方法二
+		 <script>
+			var back_first = null;
+			mui.back = function() {
+				if(!back_first) {
+					back_first = new Date().getTime();
+					mui.toast('再按一次退出应用');
+					setTimeout(function() {
+						back_first = null;
+					}, 2000);
+				} else {
+					if(new Date().getTime() - back_first < 2000) {
+						plus.runtime.quit();
+					}
+				}
+				return false;
+			}
+		</script>
 
 ```
 首页进入子页面后 返回上一层的返回按钮注册
@@ -85,6 +104,13 @@ mui('.mui-scroll-wrapper').scroll({
 	     }); 
 	 </script> 
 ```
+屏蔽返回按钮
+```javascript
+			var old_back = mui.back;
+		    mui.back = function(){
+		        return false;
+		    }
+```		   
 7:实现原生APP里的进入导航实现，还可以，对进入的次数做监听
 首次进入显示导航，以后进入都不需要导航
 首页需要添加的事件

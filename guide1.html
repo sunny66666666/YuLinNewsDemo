@@ -33,6 +33,7 @@
 	</head>
 
 	<body>
+		<!--符合常规做法 但就是 打开APP，会在首页先闪一下，才开始加载引导页的页面  -->
 		<div id="slider" class="mui-slider mui-fullscreen" style="background-color: black;">
 			<div class="mui-slider-group">
 				
@@ -59,30 +60,17 @@
 		<script type="text/javascript" src="js/mui.min.js" ></script>
 		<script>
 			mui.back = function() {};
-//			plus(function() {
-//				plus.navigator.setFullscreen(true);
-////				plus.navigator.closeSplashscreen(false);
-//			});
-			//立即体验按钮点击事件
-//			document.getElementById("close").addEventListener('tap', function(event) {
-//				plus.storage.setItem("lauchFlag", "true"); 
-//				plus.navigator.setFullscreen(false);
-//				plus.webview.currentWebview().close();
-//			}, false);
+			plus(function() {
+				plus.navigator.setFullscreen(true);
+//				plus.navigator.closeSplashscreen(false);
+			});
+//			立即体验按钮点击事件
+			document.getElementById("close").addEventListener('tap', function(event) {
+				plus.storage.setItem("lauchFlag", "true"); 
+				plus.navigator.setFullscreen(false);
+				plus.webview.currentWebview().close();
+			}, false);
 
-			document.getElementById('close').addEventListener('tap', function() {
-							//打开关于页面
-							mui.openWindow({
-								url: 'index.html',
-								id: 'index'
-							});
-						});
-						
-			var old_back = mui.back;
-		    mui.back = function(){
-		        return false;
-		    }
-								
 			
 		</script>
 	</body>
