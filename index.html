@@ -1,61 +1,226 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <script src="js/mui.min.js"></script>
-    <link href="css/mui.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/my-miui.css" />
-    <script type="text/javascript" src="js/my-mui.js" ></script>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-    </script>
-</head>
-<body >
-	<div id="slider" class="mui-slider" >
-	  <div class="mui-slider-group mui-slider-loop">
-	    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-	    <div class="mui-slider-item mui-slider-item-duplicate">
-	      <a href="#">
-	        <img src="img/leader3.jpg">
-	      </a>
-	    </div>
-	    <!-- 第一张 -->
-	    <div class="mui-slider-item">
-	      <a href="#">
-	        <img src="img/leader1.jpg">
-	      </a>
-	    </div>
-	    <!-- 第二张 -->
-	    <div class="mui-slider-item">
-	      <a href="#">
-	        <img src="img/leader2.jpg">
-	      </a>
-	    </div>
-	    <!-- 第三张 -->
-	    <div class="mui-slider-item" >
-	      <a href="mian-page.html">
-	        <img src="img/leader3.jpg">
-	      </a>
-	    </div>
-	   
-	    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-	    <div class="mui-slider-item mui-slider-item-duplicate">
-	      <a href="#">
-	        <img src="img/leader1.jpg">
-	      </a>
-	    </div>
-	  </div>
-	  <div class="mui-slider-indicator">
-	    <div class="mui-indicator mui-active"></div>
-	    <div class="mui-indicator"></div>
-	    <div class="mui-indicator"></div>
-	  </div>
-	</div>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/my-miui.css" />
+		<link rel="stylesheet" href="css/mui.picker.min.css" />
 
-	
-	
-	
-</body>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			 //创建子页面，首个选项卡页面显示，其它均隐藏；
+			mui.plusReady(function() {
+				launchScreen();
+			});
+		</script>
+		<!--首页右边按钮的模态框 注意，如果要给这个模态框的元素添加事件，必须要将他放在bodyd的直接子目录下，不然，会被最外层的 浮层覆盖，无法触发事件-->
+		<div id="popover" class="mui-popover" >
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="type1">
+					<a href="javascript:void(0)" >青春在线</a>
+				</li>
+				<li class="mui-table-view-cell" id="type2">
+					<a href="#">本期专题</a>
+				</li>
+				<li class="mui-table-view-cell" id="type3">
+					<a href="#">大美榆林</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!--侧滑栏开始-->
+				<aside class="mui-off-canvas-left" id="offCanvasSide">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" id="user-guide">
+										<img src="img/user_guide_logo.png"><span>使用指南</span>
+									</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right">
+										<img src="img/refresh_logo.png"><span>版本更新</span>
+									</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right">
+										<img src="img/support_logo.png"><span>技术支持：圣代网络科技</span>
+									</a>
+								</li>
+							</ul>
+							<div class="icon">
+								<img src="img/logo_league.png" class="icon1">
+							</div>
+							<div class="icon">
+								<img src="img/sliding_menu_text.png" class="icon2">
+							</div>
+
+						</div>
+					</div>
+				</aside>
+				<!--侧滑栏结束-->
+
+				<header class="mui-bar mui-bar-nav title" id="title">
+					<!--标题开始-->
+					<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide"></a>
+					<h1 class="mui-title"><a href="#" id='showUserPicker'>榆林新青年</a></h1>
+					<div id='userResult' class="ui-alert"></div>
+					<a href="#popover" id="openPopover" class="mui-pull-right">分类</a>
+				</header>
+				<!--标题结束-->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容开始封面 -->
+						<div id="cover-page" class="mui-content">
+							<div class="mui-row">
+								<div class="mui-col-xs-5">
+									<img src="img/init_img.jpg">
+								</div>
+								<div class="mui-col-xs-7">
+									<img src="img/logo_text.png">
+									<p>2016-08 总第103期</p>
+									<img src="img/special_topic_bar.png">
+								</div>
+							</div>
+						</div>
+						<!--封面结束-->
+						<div>
+							<!--杂志的模板部分开始-->
+							<h4 class="first-title model-margin">青春在线 QING CHUN ZAI XIAN</h4>
+							<div class="model1">
+
+							</div>
+							<!--<div class="model-margin">
+								<img src="img/little_red_mark.png"><span>职场情报站</span>
+							</div>
+							<div class="">
+								<img src="img/big-pic.png" class="big-pic">
+								<p class="big-title">【应届生入职档案 如何存放】</p>
+								<p class="summary">我是一名应届毕业生，今年6月刚刚参加工作，跟公司商议签署“三方协议”.</p>
+							</div>
+							<div class="">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<img class="mui-media-object mui-pull-right" src="img/ic_launcher.png">
+											<div class="mui-media-body">
+												【幸福】
+												<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											</div>
+
+										</a>
+									</li>
+								</ul>
+							</div>-->
+						</div>
+						<!--杂志的模板部分结束-->
+
+					</div>
+					<!-- 主界面具体展示内容结束 -->
+				</div>
+
+			</div>
+		</div>
+		<textarea class="model-first" style="display: none;">
+			<div class="model-item">
+	            <div class="model-margin second-model">
+					<img src="img/little_red_mark.png"><span class="model-title">职场情报站</span>
+				</div>
+				<a href="#" class="detail-news" id="detail-news">
+					<div class="third-model">
+						<img src="img/big-pic.png" class="big-pic">
+						<p class="big-title">【应届生入职档案 如何存放】</p>
+						<p class="summary">我是一名应届毕业生，今年6月刚刚参加工作，跟公司商议签署“三方协议”.</p>
+						<p class="news-id" style="display: none;"></p>
+					</div>
+				</a>
+				<div class="forth-model">
+					<ul class="mui-table-view  model2">
+						
+					</ul>
+				</div>
+			</div>
+		</textarea>
+		<textarea class="model-second" style="display: none;">
+			<li class="mui-table-view-cell mui-media">
+			    <a href="#" class="detail-news2" id="detail-news2">
+					<img class="mui-media-object mui-pull-right" src="img/ic_launcher.png">
+					<div class="mui-media-body">
+						<span class="small-title">【幸福】</span>
+						<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+						<p class="news-id2" style="display: none;"></p>
+					</div>
+				</a>
+			</li>
+		</textarea>
+		
+		<script type="text/javascript" src="js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="js/constant.js" ></script>
+		<!--网络请求数据-->
+		<script type="text/javascript" src="js/get-service-data.js" ></script>
+		<script type="text/javascript" src="js/my-mui.js"></script>
+		<script>
+			// 设置启动时的轮播页
+	function launchScreen() {
+		//读取本地存储，检查是否为首次启动
+		var showGuide = plus.storage.getItem("lauchFlag");
+		
+//		if(showGuide){ 
+//			//有值，说明已经显示过了，无需显示；
+//			//关闭splash页面；
+//			plus.navigator.closeSplashscreen();
+//			plus.navigator.setFullscreen(false);
+//		}else{
+//			//显示启动导航
+//			mui.openWindow({
+//				id:'guide',
+//				url:'guide.html',
+//				show:{
+//					aniShow:'none'
+//				},
+//				waiting:{
+//					autoShow:false
+//				}
+//			});
+//		}
+//测试期间，为了让导航页每次显示，就不做以上判断
+//显示启动导航
+			mui.openWindow({
+				id:'guide',
+				url:'guide.html',
+				show:{
+					aniShow:'none'
+				},
+				waiting:{
+					autoShow:false
+				}
+			});
+	}
+		</script>
+		<script> 
+		     document.addEventListener("plusready", function() { 
+		         // 注册返回按键事件 
+		         plus.key.addEventListener('backbutton', function() { 
+		         // 事件处理 
+		             plus.nativeUI.confirm("退出程序？", function(event) { 
+		                 if (event.index) { 
+		                     plus.runtime.quit(); 
+		                 } 
+		             }, null, ["取消", "确定"]); 
+		         }, false); 
+		     }); 
+		 </script> 
+	</body>
 </html>

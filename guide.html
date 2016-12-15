@@ -1,0 +1,77 @@
+<!--
+	app第一次启动时的轮播页
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css" />
+
+		
+		<style>
+			#close {
+				position: absolute;
+				width: 160px;
+				height: 40px;
+				left: 50%;
+				margin-left: -80px;
+				top:16%;
+				padding: 10px;http://192.168.25.19:8020/YuLinNewsDemo/img/leader1.jpg
+				color: #fff;
+				border-color: #fff;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="slider" class="mui-slider mui-fullscreen" style="background-color: black;">
+			<div class="mui-slider-group">
+				
+				<!-- 第1张 -->
+				<div class="mui-slider-item">
+					<img src="img/leader1.jpg">
+				</div>
+				<!-- 第2张 -->
+				<div class="mui-slider-item">
+					<img src="img/leader2.jpg">
+				</div>
+				<!-- 第3张 -->
+				<div class="mui-slider-item">
+					<img src="img/leader3.jpg">
+					<button id='close' class="mui-btn mui-btn-warning mui-btn-outlined"></button>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script>
+			mui.back = function() {};
+			mui.plusReady(function() {
+				plus.navigator.setFullscreen(true);
+				plus.navigator.closeSplashscreen();
+			});
+			//立即体验按钮点击事件
+			document.getElementById("close").addEventListener('tap', function(event) {
+				plus.storage.setItem("lauchFlag", "true"); 
+				plus.navigator.setFullscreen(false);
+				plus.webview.currentWebview().close();
+			}, false);
+			
+			
+		</script>
+	</body>
+
+</html>

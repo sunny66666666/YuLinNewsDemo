@@ -1,86 +1,113 @@
 {
-  "index.html": {
-    "resources": [
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "img/leader2.jpg",
-      "img/leader3.jpg",
-      "img/leader1.jpg",
-      "css/my-miui.css",
-      "js/my-mui.js",
-      "mian-page.html"
-    ],
-    "refer": [
-      "mian-page.html",
-      "use-guide.html",
-      "detail-news.html"
-    ]
-  },
-  "mian-page.html": {
-    "resources": [
-      "fonts/mui.ttf",
-      "img/logo_league.png",
-      "img/refresh_logo.png",
-      "js/mui.picker.min.js",
-      "img/sliding_menu_text.png",
-      "img/support_logo.png",
-      "img/user_guide_logo.png",
-      "css/mui.picker.min.css",
-      "index.html",
-      "img/big-pic.png",
-      "img/little_red_mark.png",
-      "img/special_topic_bar.png",
-      "img/ic_launcher.png",
-      "img/logo_text.png",
-      "img/init_img.jpg",
-      "css/my-miui.css",
-      "js/my-mui.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/jquery-2.2.3.min.js",
-      "js/constant.js",
-      "PHP/news-content.php",
-      "PHP/current-topic.php",
-      "PHP/beautiful-yulin.php",
-      "js/get-service-data.js"
-    ],
-    "refer": [
-      "index.html"
-    ]
-  },
-  "use-guide.html": {
-    "resources": [
-      "css/my-miui.css",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "PHP/user-guide.php",
-      "js/jquery-2.2.3.min.js",
-      "js/constant.js",
-      "img/2.png",
-      "img/3.png",
-      "img/1.png",
-      "img/4.jpg",
-      "img/0.png",
-      "img/download.png"
-    ],
-    "refer": []
-  },
-  "detail-news.html": {
-    "resources": [
-      "js/my-mui.js",
-      "css/my-miui.css",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/jquery-2.2.3.min.js",
-      "fonts/mui.ttf",
-      "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
-      "libs/easymob-webim-sdk/json2.js",
-      "libs/easymob-webim-sdk/jquery-1.11.1.js",
-      "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
-      "img/share-1.png"
-    ],
-    "refer": []
-  }
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"img/leader2.jpg",
+			"img/leader3.jpg",
+			"img/leader1.jpg",
+			"css/my-miui.css",
+			"js/my-mui.js",
+			"mian-page.html",
+			"img/big-pic.png",
+			"img/refresh_logo.png",
+			"js/mui.picker.min.js",
+			"js/jquery-2.2.3.min.js",
+			"img/user_guide_logo.png",
+			"img/support_logo.png",
+			"img/sliding_menu_text.png",
+			"js/constant.js",
+			"img/ic_launcher.png",
+			"img/logo_text.png",
+			"PHP/news-content.php",
+			"img/logo_league.png",
+			"img/little_red_mark.png",
+			"js/get-service-data.js",
+			"css/mui.picker.min.css",
+			"img/special_topic_bar.png",
+			"img/init_img.jpg",
+			"PHP/beautiful-yulin.php",
+			"PHP/current-topic.php"
+		],
+		"refer": [
+			"mian-page.html",
+			"use-guide.html",
+			"detail-news.html",
+			"guide.html"
+		]
+	},
+	"mian-page.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"img/logo_league.png",
+			"img/refresh_logo.png",
+			"js/mui.picker.min.js",
+			"img/sliding_menu_text.png",
+			"img/support_logo.png",
+			"img/user_guide_logo.png",
+			"css/mui.picker.min.css",
+			"index.html",
+			"img/big-pic.png",
+			"img/little_red_mark.png",
+			"img/special_topic_bar.png",
+			"img/ic_launcher.png",
+			"img/logo_text.png",
+			"img/init_img.jpg",
+			"css/my-miui.css",
+			"js/my-mui.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/jquery-2.2.3.min.js",
+			"js/constant.js",
+			"PHP/news-content.php",
+			"PHP/current-topic.php",
+			"PHP/beautiful-yulin.php",
+			"js/get-service-data.js"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"use-guide.html": {
+		"resources": [
+			"css/my-miui.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"PHP/user-guide.php",
+			"js/jquery-2.2.3.min.js",
+			"js/constant.js",
+			"img/2.png",
+			"img/3.png",
+			"img/1.png",
+			"img/4.jpg",
+			"img/0.png",
+			"img/download.png"
+		],
+		"refer": []
+	},
+	"detail-news.html": {
+		"resources": [
+			"js/my-mui.js",
+			"css/my-miui.css",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/jquery-2.2.3.min.js",
+			"fonts/mui.ttf",
+			"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+			"libs/easymob-webim-sdk/json2.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+			"img/share-1.png"
+		],
+		"refer": []
+	},
+	"guide.html": {
+		"resources": [
+			"img/leader2.jpg",
+			"img/leader3.jpg",
+			"img/leader1.jpg"
+		]
+	}
 }
