@@ -1,9 +1,9 @@
 ﻿MUI尝过的坑和重要知识点总结
 
-1：自带的各种标签的 样式权重过高，重写不方便（和BootStrap比较来说，BootStrap更加灵活）
+1：自带的各种标签的 样式权重过高，重写不方便（和BootStrap比较来说，BootStrap更加灵活）<br>
 2：链接跳转。常规的a标签 加href是无法跳转的，浏览器有效，但是在手机上运行是无效的
-   需要添加mui的定义的点击事件。分两种
-(1)：页面已存在的跳转标签
+   需要添加mui的定义的点击事件。<br>分两种
+(1)：页面已存在的跳转标签<br>
 ```javascript
    <script>
 			document.getElementById('user-guide').addEventListener('tap', function() {
@@ -17,7 +17,7 @@
 		</script>
 ```
 
-(2):页面不存在的跳转标签（还可以在链接跳转过程中 添加传递的参数）
+(2):页面不存在的跳转标签（还可以在链接跳转过程中 添加传递的参数）<br>
 ```javascript
 <script>
 			mui("body").on('tap',"#detail-news", function() {
@@ -213,9 +213,11 @@ guide.html页面的实现
 ```
 
 
-扫码下载<br>
+MUI版扫码下载<br>
 ![ͼʾ 1](https://i.niupic.com/images/2016/12/13/BrQjud.png)<br>
-[APP下载地址](http://fir.im/nbx8)  <br>
+原生版下载二维码<br>
+![ͼʾ 1](https://i.niupic.com/images/2016/12/16/4uZ0xY.jpg)<br>
+[APP下载地址](http://fir.im/nbx8)<br>
 ![ͼʾ 1](https://i.niupic.com/images/2016/12/12/Z4pu9p.jpg)
 ![ͼʾ 2](https://i.niupic.com/images/2016/12/12/Flttxd.jpg)
 ![ͼʾ 3](https://i.niupic.com/images/2016/12/12/L8krcb.jpg)

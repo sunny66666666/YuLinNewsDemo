@@ -50,6 +50,11 @@ document.getElementById('user-guide').addEventListener('tap', function() {
 					id: 'use-guide'
 				});
 			});
+//点击版本更新
+document.getElementById('update').addEventListener('tap', function() {
+				//打开关于页面
+				mui.toast("当前为最新版本！")
+			});
 			
 //点击大模块的跳转事件
 mui("body").on('tap',"#detail-news", function() {
