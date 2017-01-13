@@ -214,7 +214,7 @@ guide.html页面的实现
 
 
 MUI版扫码下载<br>
-![ͼʾ 1](https://i.niupic.com/images/2016/12/13/BrQjud.png)<br>
+![ͼʾ 1](http://i.niupic.com/images/2017/01/13/bTLLwO.png)<br>
 原生版下载二维码<br>
 ![ͼʾ 1](https://i.niupic.com/images/2016/12/16/4uZ0xY.jpg)<br>
 [APP下载地址](http://fir.im/nbx8)<br>
